@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Focus Zone</title>
 
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Lora:ital,wght@1,400&display=swap" rel="stylesheet">
 
   <style>
@@ -93,7 +92,7 @@
     const body = document.body;
     const toggleBtn = document.getElementById("themeToggle");
 
-    // ✅ Working Quote API (no CORS issues)
+    // ✅ Get a quote from Quotable.io
     fetch("https://api.quotable.io/random")
       .then(res => res.json())
       .then(data => {
@@ -124,7 +123,7 @@
       setTheme(!isDark);
     });
 
-    // Init
+    // Set initial theme
     setTheme(true);
   </script>
 </body>
