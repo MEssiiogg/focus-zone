@@ -93,19 +93,19 @@
     const body = document.body;
     const toggleBtn = document.getElementById("themeToggle");
 
-    // Fetch a quote
-    fetch("https://zenquotes.io/api/random")
+    // ✅ Working Quote API (no CORS issues)
+    fetch("https://api.quotable.io/random")
       .then(res => res.json())
       .then(data => {
-        quoteEl.textContent = `"${data[0].q}"`;
-        authorEl.textContent = `– ${data[0].a}`;
+        quoteEl.textContent = `"${data.content}"`;
+        authorEl.textContent = `– ${data.author}`;
       })
       .catch(() => {
-        quoteEl.textContent = "Couldn't fetch a quote right now.";
+        quoteEl.textContent = "Couldn't fetch quote.";
         authorEl.textContent = "";
       });
 
-    // Theme toggle
+    // 🌗 Theme toggle
     let isDark = true;
     const setTheme = (dark) => {
       isDark = dark;
@@ -124,7 +124,7 @@
       setTheme(!isDark);
     });
 
-    // Init dark mode
+    // Init
     setTheme(true);
   </script>
 </body>
